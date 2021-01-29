@@ -15,7 +15,6 @@ b. 可在 $apps/migrations 文件夹下看到，migrate 命令将要执行的脚
 2. 使 $app 中的 model 在 admin界面中可管理，修改 $app/admin.py 文件;
 ``` python
 from django.contrib import admin
-
 from .models import Question
 
 admin.site.register(Question)
@@ -32,7 +31,7 @@ admin.site.register(Question)
     └── prod.py
 ```
 `common.py` 文件中为 `settings.py` 中原内容，在`prod.py`中导入common中的所有内容，然后配置想要覆盖的配置项。
-```py
+```python
 from __future__ import absolute_import # optional, but I like it
 from .common import *
 
@@ -52,9 +51,8 @@ DATABASES['default']['USER'] = 'testuser'
 DATABASES['default']['PASSWORD'] = '1'
 DATABASES['default']['HOST'] = '127.0.0.1'
 DATABASES['default']['PORT'] = '5432'
-
 ```
 
 参考资料：
-[Writing your first Django app, part 2]:https://docs.djangoproject.com/en/3.1/intro/tutorial02/
-[How to manage local vs production settings in Django?]:https://stackoverflow.com/a/15315143
+1. [Writing your first Django app, part 2](https://docs.djangoproject.com/en/3.1/intro/tutorial02/)
+2. [How to manage local vs production settings in Django?](https://stackoverflow.com/a/15315143)
